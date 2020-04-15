@@ -1,0 +1,64 @@
+<script>
+function httpGet(theUrl)
+{
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+    xmlHttp.send( null );
+    return xmlHttp.responseText;
+}
+
+var deck_id = "io7hsi37ypwv"
+var current_image = "https://opengameart.org/sites/default/files/card%20back%20red.png"
+function makeDeck(){
+	deck = JSON.parse(httpGet("https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1"))
+    deck_id = deck['deck_id']
+    console.log("created new deck: " + deck_id)
+}
+
+function drawCard(){
+	url = "https://deckofcardsapi.com/api/deck/" + deck_id + "/draw/?count=1"
+	card = JSON.parse(httpGet(url))
+    console.log("drawing card")
+    current_image = card['cards'][0]['image']
+    var img = document.getElementById("card")
+    img.src = "https://opengameart.org/sites/default/files/card%20back%20red.png";
+    var no_card = document.getElementById("number_of_cards")
+    no_card.innerHTML = "Remaining cards: " + card['remaining']    
+}
+
+function newGame(){
+	makeDeck()
+    var no_card = document.getElementById("number_of_cards")
+    no_card.innerHTML = "Remaining cards: " + 52  
+    var img = document.getElementById("card")
+    img.src = "https://opengameart.org/sites/default/files/card%20back%20red.png";
+}
+
+function flipCard(){
+    var img = document.getElementById("card")
+    img.src = current_image
+}
+
+var audio = new Audio('https://ccrma.stanford.edu/~jos/mp3/viola.mp3');
+audio.play();
+</script>
+<div>
+<p id="main" style="color: green">
+	<span id="number_of_cards">"Remaining cards: 52"</span>
+    <div>
+    <img id="card" src="https://deckofcardsapi.com/static/img/XX.png" width="300" height="400">
+    </div>
+</p>
+
+<button onclick=
+    "newGame();">New Game/Reshuffle</button> 
+<button onclick=
+    "drawCard();">Draw card</button> 
+<button onclick=
+    "flipCard();">Flip card</button>    
+<script>window.onload=newGame()</script>
+<div>
+<iframe width="420" height="345" src="https://www.youtube.com/embed/tgbNymZ7vqY">
+</iframe>
+</div>
+</div>
