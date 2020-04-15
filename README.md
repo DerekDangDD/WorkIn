@@ -1,6 +1,6 @@
 # deckofcards
 
-This the hack a prep challenge repo for team 2
+This the hack a prep challenge repo for team 2. We are going to win!
 
 Alex Fung
 Derek Dang
