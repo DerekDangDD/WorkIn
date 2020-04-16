@@ -1,10 +1,5 @@
 import React from 'react';
-
 import Navigation from './Navigation';
-import Typical from 'react-typical';
-
-import {SpeechBubble} from 'react-kawaii';
-
 import './style.css';
 
 const DEFAULT_MOOD = 'happy';
@@ -38,7 +33,7 @@ class Contact extends React.Component {
         return (
             <div>
                 <Navigation />
-                <div>
+                <div className="app">
                     Services
                 </div>
             </div>

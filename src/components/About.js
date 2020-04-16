@@ -1,6 +1,4 @@
 import React from 'react';
-import Typical from 'react-typical';
-
 import Navigation from './Navigation';
 
 import './style.css';
@@ -9,7 +7,7 @@ const About = () => {
     return (
         <div>
             <Navigation />
-            <div>
+            <div className="app">
                 About
             </div>
         </div>
