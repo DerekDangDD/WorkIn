@@ -34,7 +34,25 @@ class Contact extends React.Component {
             <div>
                 <Navigation />
                 <div className="app">
-                    Services
+                <div className="ui massive list">
+                    <div className="item">
+                        <img className="ui avatar image" src="derek.png" />
+                        <div className="content">
+                        <a className="header">Derek</a>
+                        <div className="description">bobtestpizza001@gmail.com</div>
+                        </div>
+                    </div>
+                    <div className="item">
+                        <img className="ui avatar image" src="johnny.png" />
+                        <div className="content">
+                        <a className="header">Johnny</a>
+                        <div className="description">johnny@ualberta.ca</div>
+                        </div>
+                    </div>
+                </div>
+
+
+                    
                 </div>
             </div>
         );

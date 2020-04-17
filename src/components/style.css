@@ -21,7 +21,6 @@ a.nav-link:hover {
 }
 
 .app {
-    text-align: center;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -49,11 +48,6 @@ a.nav-link:hover {
 
 .contact-title {
     font-size: 10em;
-}
-
-.description {
-    font-size: 25px;
-    font-family: 'Roboto', sans-serif;
 }
 
 .header-text {
