@@ -17,13 +17,108 @@ export default class Calendar extends React.Component {
     available_times: []
   }
 
-  
+
   render() {
     return (
       <div className='demo-app'>
         <div className='demo-app-top'>
           <button onClick={this.toggleWeekends}>toggle weekends</button>&nbsp;
         </div>
+        <table>
+        <tr>
+        <td>
+        <h3>Find Available Time</h3>
+        <form onSubmit={this.handleSubmit} style={{ display: 'flex' }}>
+          <table>
+            <tr>
+              <td>
+                <label for="title">Start Time:</label>
+              </td>
+              <td>
+                <input type="datetime-local" id="start" name="start" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="end">End Time:</label> </td>
+              <td>
+                <input type="datetime-local" id="end" name="end" /></td></tr>
+
+            <tr>
+              <td>
+                <label for="host">Host Email:</label></td>
+              <td>
+                <input type="text" name="host"
+                  placeaholder="add todo .."
+                  style={{ flex: '10' }}
+                /></td></tr>
+            <tr>
+              <td>
+                <label for="guest">Guest Email:</label>
+              </td>
+              <td>
+                <input type="text" name="guest"
+                  placeaholder="add todo .."
+                  style={{ flex: '10' }}
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="description">Description:</label>
+              </td>
+              <td>
+                <input type="text"
+                  name="description"
+                  placeaholder="add todo .."
+                  style={{ flex: '10' }}
+                /></td>
+            </tr>
+            <input
+              type="submit"
+              value="Submit"
+              className="btn"
+              style={{ flex: '1' }}
+
+            />
+          </table>
+        </form>
+        <div>
+          <h4>Available_times:</h4> {this.state.available_times.map(txt => <p>{txt}</p>)}
+        </div>
+        <h3>Create Event</h3>
+        <form onSubmit={this.createEvent} style={{ display: 'flex' }}>
+          <table>
+            <tr>
+              <td>
+                <label for="title">Event Title:</label>
+              </td>
+              <td>
+                <input type="text"
+                  name="title"
+                /> </td>
+            </tr>
+            <tr>
+              <td><label for="meeting_start_time">Start Time:</label></td>
+              <td> <input type="datetime-local" id="meeting_start_time"
+                name="meeting-start-time"></input></td>
+            </tr>
+            <tr><td>
+              <label for="meeting_end_time">End Time:</label></td>
+
+              <td><input type="datetime-local" id="meeting_end_time"
+                name="meeting-start-time"
+              ></input></td></tr>
+
+            <input
+              type="submit"
+              value="Submit"
+              className="btn"
+            />
+          </table>
+        </form>
+        </td>
+          <td>
         <div className='demo-app-calendar'>
           <FullCalendar
             defaultView="dayGridMonth"
@@ -39,63 +134,10 @@ export default class Calendar extends React.Component {
             dateClick={this.handleDateClick}
           />
         </div>
-        <h3>Find Available Time</h3>
-        <form onSubmit={this.handleSubmit} style={{ display: 'flex' }}>
+        </td>
 
-<label for="title">Start Time:</label>
-                <input type="datetime-local" id="start" name="start" />
-
-                <label for="end">End Time:</label>
-                <input type="datetime-local" id="end" name="end" />
-
-                <label for="host">Host Email:</label>
-                <input type="text" name="host"
-            placeaholder="add todo .."
-            style={{ flex: '10' }}
-          />
-
-<label for="guest">Guest Email:</label>
-                <input type="text" name="guest"
-            placeaholder="add todo .."
-            style={{ flex: '10' }}
-          />
-                <label for="description">Description:</label>
-                <input type="text"
-            name="description"
-            placeaholder="add todo .."
-            style={{ flex: '10' }}
-          />
-          <input
-            type="submit"
-            value="Submit"
-            className="btn"
-            style={{ flex: '1' }}
-
-          />
-        </form>
-        <div>
-          available_times: {this.state.available_times.map(txt => <p>{txt}</p>)}
-        </div>
-        <h3>Create Event</h3>
-        <form onSubmit={this.createEvent} style={{ display: 'flex' }}>
-        <label for="title">Event Title:</label>
-                <input type="text"
-            name="title"
-          />
-          <label for="meeting_start_time">Start Time:</label>
-          <input type="datetime-local" id="meeting_start_time"
-            name="meeting-start-time"></input>
-          <label for="meeting_end_time">End Time:</label>
-          <input type="datetime-local" id="meeting_end_time"
-            name="meeting-start-time"
-          ></input>
-
-          <input
-            type="submit"
-            value="Submit"
-            className="btn"
-          />
-        </form>
+        </tr>
+        </table>
       </div>
     )
   }
@@ -119,7 +161,7 @@ export default class Calendar extends React.Component {
         title: title,
         start: start,
         end: end,
-        url: "http://google.com/"
+        url: "/video"
       })
     })
   }
@@ -241,8 +283,6 @@ export default class Calendar extends React.Component {
       if ((end_time && !i) || (end_time && i && meetings[i - 1].end_time < meetings[i].start_time))
         schedule.push({ meeting: 'free time', start_time: start_time, end_time: end_time });
 
-      // schedule.push(meetings[i]);
-
       if (i + 1 === l) {
         start_time = addMinute(meetings[i].end_time);
 
@@ -259,7 +299,7 @@ export default class Calendar extends React.Component {
         available_times: this.state.available_times.concat(message)
       })
     }
-    
+
   }
 
 }
