@@ -4,6 +4,7 @@ import Contact from './Contact';
 import Home from './Home';
 import { Switch, Route } from 'react-router-dom';
 import Calendar from './Calendar';
+import Youtube from './Youtube';
 
 const App = () => (
     <Switch>
@@ -18,6 +19,9 @@ const App = () => (
         </Route>
         <Route exact path='/calendar'>
             <Calendar />
+        </Route>
+        <Route exact path='/video'>
+            <Youtube />
         </Route>
     </Switch>
 );

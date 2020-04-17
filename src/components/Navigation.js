@@ -21,6 +21,13 @@ class Navigation extends React.Component {
                         </div>
                         <div className="column">
                             <div className="pad">
+                                <NavLink exact to='/video' className="nav-link" activeStyle={{textDecoration:"underline", color:"black"}}>
+                                    Video
+                                </NavLink>
+                            </div>
+                        </div>
+                        <div className="column">
+                            <div className="pad">
                                 <NavLink exact to='/about' className="nav-link" activeStyle={{textDecoration:"underline", color:"black"}}>
                                     About
                                 </NavLink>
