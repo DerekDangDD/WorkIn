@@ -29,7 +29,7 @@ class Navigation extends React.Component {
                         <div className="column">
                             <div className="pad">
                                 <NavLink exact to='/contact' className="nav-link" activeStyle={{textDecoration:"underline", color:"black"}}>
-                                    Services
+                                    Contacts
                                 </NavLink>
                             </div>
                         </div>
