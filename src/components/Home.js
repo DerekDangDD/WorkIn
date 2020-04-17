@@ -11,6 +11,7 @@ class App extends React.Component {
             <div>
                 <Navigation />
                 <div className="app">
+                    <br />
                     <Calendar />
               </div>
             </div>

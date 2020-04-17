@@ -35,6 +35,7 @@ class Contact extends React.Component {
                 <Navigation />
                 <div className="app">
                 <div className="ui massive list">
+                    <br />
                     <div className="item">
                         <img className="ui avatar image" src="derek.png" />
                         <div className="content">
@@ -47,6 +48,27 @@ class Contact extends React.Component {
                         <div className="content">
                         <a className="header">Johnny</a>
                         <div className="description">johnny@ualberta.ca</div>
+                        </div>
+                    </div>
+                    <div className="item">
+                        <img className="ui avatar image" src="paul.png" />
+                        <div className="content">
+                        <a className="header">Paul</a>
+                        <div className="description">paul@gmail.com</div>
+                        </div>
+                    </div>
+                    <div className="item">
+                        <img className="ui avatar image" src="alex.png" />
+                        <div className="content">
+                        <a className="header">Alex</a>
+                        <div className="description">alex@gmail.com</div>
+                        </div>
+                    </div>
+                    <div className="item">
+                        <img className="ui avatar image" src="liam.png" />
+                        <div className="content">
+                        <a className="header">Liam</a>
+                        <div className="description">liam@gmail.com</div>
                         </div>
                     </div>
                 </div>

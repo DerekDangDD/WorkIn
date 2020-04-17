@@ -7,7 +7,7 @@ class Navigation extends React.Component {
     render() {
         return (
             <div>
-                <div className="navigation-title">Workin</div>
+                <div className="navigation-title">Work-In</div>
                 <div className="ui three column grid navigation">
                     <div className="column" />
                     <div className="ui five column grid">
