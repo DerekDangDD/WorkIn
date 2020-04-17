@@ -52,6 +52,12 @@ export default class Calendar extends React.Component {
                 end time
                 <input type="datetime-local" id="end" name="end" />
 
+                host email
+                <input type="text"  name="host" 
+                placeaholder="add todo .."
+                style={{flex:'10'}}
+                />
+
                 guest email
                 <input type="text"  name="guest" 
                 placeaholder="add todo .."
@@ -81,6 +87,7 @@ export default class Calendar extends React.Component {
     console.log(event.target.title.value);
     console.log(event.target.start.value);
     console.log(event.target.end.value);
+    console.log(event.target.host.value);
     console.log(event.target.guest.value);
     console.log(event.target.description.value);
     this.createEvent(event);
@@ -91,6 +98,7 @@ export default class Calendar extends React.Component {
     var title= event.target.title.value
     var start = Date.parse(event.target.start.value)
     var end = Date.parse(event.target.end.value)
+    var host = event.target.host.value
     var guest = event.target.guest.value
     var desc = event.target.description.value
     this.setState({  // add new event data
@@ -123,6 +131,9 @@ export default class Calendar extends React.Component {
                 "timeMax": event.target.end.value  + ":00-0000",
                 "timeZone": "America/Vancouver",
                 "items": [
+                  {
+                    "id": event.target.host.value,
+                  },
                   {
                     "id": event.target.guest.value
                   }
