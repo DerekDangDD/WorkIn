@@ -63,17 +63,7 @@ export default class Calendar extends React.Component {
                 />
               </td>
             </tr>
-            <tr>
-              <td>
-                <label for="description">Description:</label>
-              </td>
-              <td>
-                <input type="text"
-                  name="description"
-                  placeaholder="add todo .."
-                  style={{ flex: '10' }}
-                /></td>
-            </tr>
+            
             <input
               type="submit"
               value="Submit"
@@ -84,7 +74,7 @@ export default class Calendar extends React.Component {
           </table>
         </form>
         <div>
-          <h4>Available_times:</h4> {this.state.available_times.map(txt => <p>{txt}</p>)}
+          <h3>Available Times:</h3> {this.state.available_times.map(txt => <p><h4>{txt}</h4></p>)}
         </div>
         <h3>Create Event</h3>
         <form onSubmit={this.createEvent} style={{ display: 'flex' }}>
@@ -97,6 +87,17 @@ export default class Calendar extends React.Component {
                 <input type="text"
                   name="title"
                 /> </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="zoom">Zoom Link:</label>
+              </td>
+              <td>
+                <input type="text"
+                  name="zoom"
+                  placeaholder="add todo .."
+                  style={{ flex: '10' }}
+                /></td>
             </tr>
             <tr>
               <td><label for="meeting_start_time">Start Time:</label></td>
@@ -161,7 +162,7 @@ export default class Calendar extends React.Component {
         title: title,
         start: start,
         end: end,
-        url: "/video"
+        url: "https://zoom.us/j/98780425247"
       })
     })
   }
