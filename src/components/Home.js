@@ -2,6 +2,7 @@ import React from 'react';
 import Navigation from './Navigation';
 import axios from 'axios';
 import './style.css';
+import Calendar from './Calendar';
 
 class App extends React.Component {
 
@@ -45,6 +46,7 @@ class App extends React.Component {
                 <Navigation />
                 <div className="app">
                     {JSON.stringify(this.state.apiResponse)}
+                    <Calendar />
               </div>
             </div>
         );

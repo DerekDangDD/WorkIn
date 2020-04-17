@@ -3,6 +3,7 @@ import About from './About';
 import Contact from './Contact';
 import Home from './Home';
 import { Switch, Route } from 'react-router-dom';
+import Calendar from './Calendar';
 
 const App = () => (
     <Switch>
@@ -14,6 +15,9 @@ const App = () => (
         </Route>
         <Route exact path='/contact'>
             <Contact />
+        </Route>
+        <Route exact path='/calendar'>
+            <Calendar />
         </Route>
     </Switch>
 );
